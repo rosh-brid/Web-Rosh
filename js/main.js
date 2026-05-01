@@ -5,10 +5,10 @@ function buatDrawer() {
 
     drawer.innerHTML = `
         <h1>Main Menu</h1>
-        <button type="button">Berkas</button>
-        <button type="button">Editor</button>
-        <button type="button">Terminal</button>
-        <button type="button">Pengaturan</button>
+        <button type="button">Home</button>
+        <button type="button">My Profile </button>
+        <button type="button">contact developer</button>
+        <button type="button">Kerja sama</button>
     `;
 
     document.body.appendChild(drawer);
@@ -34,9 +34,10 @@ function aturDrawer(drawer, overlay, terbuka) {
 
 const daftarItem = [
     {
-        nama: 'Browser',
-        gambar: '../gambar/browser.png',
-        info: 'Internet'
+        nama: 'Network Speed',
+        gambar: '../gambar/server.png',
+        info: 'Network test',
+        link: 'https://play.google.com/store/apps/details?id=rosh.networkspeed&pli=1'
     },
     {
         nama: 'Editor',
@@ -90,6 +91,12 @@ function buatItem(data) {
         <span class="item_nama">${data.nama}</span>
         <span class="item_info">${data.info}</span>
     `;
+
+    if (data.link) {
+        item.addEventListener('click', function() {
+            window.location.href = data.link;
+        });
+    }
 
     return item;
 }
