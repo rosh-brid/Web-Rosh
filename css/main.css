@@ -1,0 +1,162 @@
+body {
+    background-color: #000000;
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+#nav {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#nav_bar {
+    background-color: #550055;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#ikon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+}
+
+#ikon img {
+    width: 38px;
+    height: 38px;
+}
+
+#ikon h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+#profile {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+#utama {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#konten {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.item_konten {
+    min-width: 0;
+    min-height: 148px;
+    padding: 14px 8px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #202124;
+    color: #ffffff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+.item_konten:hover {
+    background-color: #2b2c30;
+}
+
+.item_konten img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.item_nama,
+.item_info {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item_nama {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.item_info {
+    margin-top: 4px;
+    color: #bdbdbd;
+    font-size: 12px;
+}
+
+#drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 24px 18px;
+    box-sizing: border-box;
+    background-color: #242424;
+    color: #ffffff;
+    transform: translateX(-100%);
+    transition: transform 180ms ease;
+    z-index: 10;
+}
+
+#drawer_overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+    z-index: 9;
+}
+
+#drawer_overlay.terbuka {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#drawer.terbuka {
+    transform: translateX(0);
+}
+
+#drawer h1 {
+    margin: 0 0 24px;
+    font-size: 24px;
+}
+
+#drawer button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    text-align: left;
+    cursor: pointer;
+}
+
+@media (min-width: 720px) {
+    #konten {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
